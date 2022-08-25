@@ -8,6 +8,6 @@ class AuthorViewSet(ModelViewSet):
     queryset = Author.objects.all()
 
     def get_serializer_class(self):
-        if self.action in ['create']:
+        if self.action in ['create', 'partial_update']:
             return AuthorSerial
         return AuthorListSerializer
